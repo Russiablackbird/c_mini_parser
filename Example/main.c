@@ -18,15 +18,15 @@ int main(void)
   strcat(src, "ice-audio-info: ice-samplerate=44100;ice-bitrate=128;ice-channels=2\r\n");
   strcat(src, "icy-br:128\r\n");
   strcat(src, "icy-genre:Pop\r\n");
-  strcat(src, "icy-name:MARUSYA\r\n");
+  strcat(src, "icy-name:MARUSYA\r\n");// parse this line
   strcat(src, "icy-private:1\r\n");
   strcat(src, "icy-pub:0\r\n");
   strcat(src, "icy-metaint:16000\r\n");
   strcat(src, "\r\n");
   strcat(src, "hgsdgsdgsdgsdg");
 
-  char ret[1024] = ""; //buffer
-  Parse("icy-name:", "\r\n", src, ret);
-  printf("%s", ret, "\r\n"); // return <MARUSYA>
+  char ret[512] = ""; //buffer
+  Parse("icy-name:", "\r\n", src, ret); // "icy-name:MARUSYA\r\n" -> MARUSYA
+  printf("%s", ret, "\r\n");
   return 0;
 }
