@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "c_parser.h"
 
 int main(void)
@@ -26,6 +27,6 @@ int main(void)
 
   char ret[1024] = ""; //buffer
   Parse("icy-name:", "\r\n", src, ret);
-  printf("%s",ret,"\r\n"); // return <MARUSYA>
-
+  printf("%s", ret, "\r\n"); // return <MARUSYA>
+  return 0;
 }
